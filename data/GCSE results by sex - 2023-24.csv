@@ -1,0 +1,55 @@
+2023/24,,All,,,,,,Boys,,,,,,Girls,,,,,
+,,Number of pupils at the end of key stage 4,Average Attainment 8 score per pupil,Average Progress 8 score per pupil,Percentage of pupils entered for English and Mathematics GCSEs,Percentage of pupils achieving grades 5 or above in English and Mathematics GCSEs,Percentage of pupils achieving grades 4 or above in English and Mathematics GCSEs,Total number of pupils at the end of key stage 4,Average Attainment 8 score of all pupils,Average Progress 8 score of all pupils,Percentage of pupils entered for components,Percentage of pupils achieving grades 5 or above in English and Mathematics GCSEs,Percentage of pupils achieving grades 4 or above in English and Mathematics GCSEs,Total number of pupils at the end of key stage 4,Average Attainment 8 score of all pupils,Average Progress 8 score of all pupils,Percentage of pupils entered for components,Percentage of pupils achieving grades 5 or above in English and Mathematics GCSEs,Percentage of pupils achieving grades 4 or above in English and Mathematics GCSEs
+E09000007,Camden,"1,605",47.9,-0.14,95.3,50.7,67.3,743,43.4,-0.42,93.7,45.6,63,862,51.8,+0.10,96.6,55,71
+E09000012,Hackney,"2,468",51.2,+0.51,97,53.5,72.1,"1,169",50.1,+0.43,96.4,53.6,70.3,"1,299",52.1,+0.58,97.5,53.4,73.7
+E09000013,Hammersmith and Fulham,"1,528",55.9,+0.52,95.2,64.4,79.2,759,53.2,+0.39,93.3,61.4,76.2,769,58.6,+0.64,97.1,67.4,82.2
+E09000014,Haringey,"2,713",48.1,+0.30,95.8,49.6,67.1,"1,394",45.6,+0.12,95,47.1,64.4,"1,319",50.8,+0.48,96.7,52.2,70
+E09000019,Islington,"1,450",48.0,+0.15,94.8,51.3,67,783,47.3,+0.18,94,51.2,67,667,48.8,+0.11,95.8,51.4,66.9
+E09000020,Kensington and Chelsea,"1,005",54.5,+0.30,96.9,62.2,77.6,614,54.3,+0.29,96.3,64.2,78.3,391,54.7,+0.31,98,59.1,76.5
+E09000022,Lambeth,"2,384",45.2,0.00,95.4,43.8,64.7,"1,204",43.2,-0.08,94.7,42.8,63.1,"1,180",47.3,+0.08,96.1,44.8,66.4
+E09000023,Lewisham,"2,308",45.9,+0.10,95.7,45.6,65,"1,158",43.5,+0.03,94,43.1,63.6,"1,150",48.3,+0.18,97.3,48.2,66.4
+E09000025,Newham,"4,671",51.1,+0.28,96.7,56.4,72.2,"2,314",48.5,+0.11,95.9,53.1,69.1,"2,357",53.6,+0.44,97.5,59.7,75.3
+E09000028,Southwark,"3,233",51.9,+0.46,97.2,56.1,72.9,"1,581",50.9,+0.47,96.5,55.4,72.3,"1,652",52.9,+0.46,97.8,56.7,73.5
+E09000030,Tower Hamlets,"3,207",48.3,+0.13,95.2,51.6,68.6,"1,614",45.4,0.00,93.8,49.4,65.7,"1,593",51.3,+0.26,96.7,53.9,71.6
+E09000032,Wandsworth,"2,070",52.1,+0.49,96,59.1,73.6,"1,089",50.2,+0.43,95.4,57.7,72.2,981,54.2,+0.57,96.7,60.7,75.1
+E09000033,Westminster,"1,782",53.8,+0.47,98.1,61.3,77,893,50.0,+0.23,97.8,56,73.5,889,57.6,+0.70,98.5,66.6,80.7
+E09000002,Barking and Dagenham,"3,131",47.2,+0.24,96.7,46.9,65.5,"1,646",44.9,+0.14,96,44.2,62.9,"1,485",49.8,+0.34,97.4,49.9,68.4
+E09000003,Barnet,"4,639",57.3,+0.61,97.9,66.6,80.3,"2,393",55.3,+0.49,97.2,64.1,78.9,"2,246",59.5,+0.74,98.8,69.2,81.8
+E09000004,Bexley,"3,310",50.4,-0.02,96.5,55,70.8,"1,740",48.8,-0.07,95.9,53.7,69.4,"1,570",52.3,+0.04,97.2,56.4,72.3
+E09000005,Brent,"3,235",51.6,+0.58,97.3,55.7,71.9,"1,667",49.6,+0.40,96.9,54,69.3,"1,568",53.7,+0.78,97.7,57.4,74.7
+E09000006,Bromley,"3,868",50.5,+0.05,96.5,55.7,73,"1,945",48.4,-0.10,95.9,52.4,70.5,"1,923",52.7,+0.20,97,59,75.5
+E09000008,Croydon,"3,942",44.8,-0.04,95.8,44.2,63.4,"1,936",41.3,-0.21,94.3,40.5,59.6,"2,006",48.1,+0.13,97.3,47.8,67.2
+E09000009,Ealing,"3,526",52.0,+0.56,97.2,57.7,74,"1,773",49.7,+0.42,96.6,56,72.2,"1,753",54.4,+0.69,97.8,59.4,75.9
+E09000010,Enfield,"3,922",46.9,+0.09,95.7,48.3,66.1,"2,006",44.7,-0.02,94.7,47.3,64.1,"1,916",49.1,+0.20,96.9,49.4,68.1
+E09000011,Greenwich,"3,034",46.5,-0.01,96.5,49.3,68,"1,514",44.2,-0.12,96,46.4,65.6,"1,520",48.8,+0.10,96.9,52.3,70.3
+E09000015,Harrow,"2,733",52.2,+0.46,97.6,56.7,73.6,"1,324",49.8,+0.29,97.2,55.4,71.4,"1,409",54.5,+0.61,97.9,57.8,75.7
+E09000016,Havering,"3,035",48.8,+0.11,97.1,52.2,71.3,"1,526",46.8,+0.01,96.3,50.1,70,"1,509",50.9,+0.20,97.8,54.3,72.6
+E09000017,Hillingdon,"3,679",49.3,+0.24,97,53.3,70.6,"1,856",47.2,+0.14,95.9,50.9,68.2,"1,823",51.5,+0.34,98,55.8,73.1
+E09000018,Hounslow,"3,412",50.1,+0.45,95.5,55,71.2,"1,773",48.0,+0.36,94.2,52.3,69.1,"1,639",52.4,+0.54,96.9,57.8,73.5
+E09000021,Kingston upon Thames,"1,986",59.1,+0.65,96.6,70.4,83,952,56.8,+0.52,95.5,68.3,80.7,"1,034",61.3,+0.77,97.7,72.3,85.2
+E09000024,Merton,"1,789",51.7,+0.61,96,55.1,73.1,928,50.9,+0.64,95.5,56,73.8,861,52.5,+0.58,96.6,54.1,72.4
+E09000026,Redbridge,"3,957",55.2,+0.52,97.8,64.5,79.3,"1,978",52.0,+0.37,97.3,59.7,76,"1,979",58.4,+0.67,98.4,69.3,82.6
+E09000027,Richmond upon Thames,"2,007",56.4,+0.43,97.6,66.6,83,"1,025",54.9,+0.38,97.1,65.5,81.9,982,58.1,+0.49,98.2,67.7,84.1
+E09000029,Sutton,"3,328",59.1,+0.45,97.1,68,82.4,"1,744",58.2,+0.39,95.6,65.8,81.1,"1,584",60.2,+0.52,98.6,70.4,83.8
+E09000031,Waltham Forest,"2,971",45.7,-0.10,95.2,45.2,64.8,"1,480",42.8,-0.25,93.7,42.7,62.3,"1,491",48.6,+0.06,96.6,47.8,67.3
+E13000001,Inner London,"30,424",50.0,+0.28,96.2,53.7,70.7,"15,315",47.9,+0.17,95.2,51.7,68.6,"15,109",52.3,+0.39,97.1,55.7,72.8
+E13000002,Outer London,"61,504",51.1,+0.29,96.7,55.8,72.6,"31,206",49.0,+0.18,95.9,53.6,70.5,"30,298",53.4,+0.41,97.6,58.2,74.8
+E12000001,North East,"28,878",43.7,-0.25,95.2,42.1,62.3,"14,647",41.6,-0.36,94.3,40.2,59.9,"14,231",45.9,-0.14,96.1,44,64.8
+E12000002,North West,"85,790",44.3,-0.17,95.9,42.5,62.1,"43,936",42.1,-0.29,95.1,40.3,59.7,"41,854",46.7,-0.04,96.8,44.8,64.6
+E12000003,Yorkshire and The Humber,"63,437",44.2,-0.09,96.2,43.6,62.8,"32,408",42.0,-0.22,95.2,41.2,60.2,"31,029",46.6,+0.05,97.1,46,65.4
+E12000004,East Midlands,"54,705",44.8,-0.07,96.5,43.7,63.7,"28,095",42.8,-0.18,95.8,41.6,61.2,"26,610",47.0,+0.05,97.2,46,66.2
+E12000005,West Midlands,"70,831",44.5,-0.11,96.1,42.4,62.2,"36,267",42.0,-0.24,95.2,39.8,59.3,"34,564",47.0,+0.03,97.1,45.2,65.2
+E12000006,East of England,"71,207",46.0,-0.01,96.4,45.9,65.8,"36,635",43.9,-0.13,95.7,43.6,63.1,"34,572",48.3,+0.10,97.3,48.4,68.6
+E12000007,London,"91,928",50.8,+0.29,96.5,55.1,72,"46,521",48.6,+0.18,95.7,53,69.9,"45,407",53.0,+0.40,97.4,57.4,74.1
+E12000008,South East,"99,784",47.2,-0.02,96.2,48.6,67.4,"51,048",45.3,-0.12,95.5,46.9,65.2,"48,736",49.3,+0.09,97,50.5,69.7
+E12000009,South West,"57,715",46.0,-0.03,95.9,45.8,65.7,"29,417",43.9,-0.14,95.2,43.2,63,"28,298",48.2,+0.09,96.6,48.5,68.5
+E92000001,England,"624,275",46.1,-0.03,96.2,46.2,65.4,"318,974",43.9,-0.15,95.4,44,62.9,"305,301",48.4,+0.09,97,48.6,67.9
+,,,,,,,,,,,,,,,,,,,
+Footnotes,,,,,,,,,,,,,,,,,,,
+"(1) Local authority, region, parliamentary constituency and the total (state-funded sector) figures cover achievements in state-funded schools only. They do not include pupils recently arrived from overseas and so will not match with state-funded figures in the national tables.",,,,,,,,,,,,,,,,,,,
+(2) Progress 8 was not published in 2020 or 2021 because of the COVID-19 pandemic.,,,,,,,,,,,,,,,,,,,
+"(3) A Progress 8 score of 1.0 means pupils make on average a grade more progress than the national average of pupils with similar KS2 prior attainment in mainstream schools. Progress 8 should be interpreted alongside the associated confidence intervals. If the confidence intervals cross 0, then progress is not significantly different compared to pupils with similar KS2 prior attainment in mainstream schools.",,,,,,,,,,,,,,,,,,,
+"(4) Changes were made to the methodology for calculating performance data due to the commitment not to use qualification results awarded between January 2020 and August 2021 in future measures. GCSE exams returned in 2022 and grades were awarded at a midpoint between 2021 and pre-pandemic grading. In 2023, there was a return to pre-pandemic grading, with some protections. Comparisons to 2020, 2021, and 2022 should be made with caution.",,,,,,,,,,,,,,,,,,,
+"(5) c = a cell that has been suppressed due to low number of pupils. Suppression was applied where deemed necessary for all data up to 2018/19. For 2019/20, DfE suppression policy changed. For 2020 and 2021 results where a geographical area contains only one school (for example Isles of Scilly) the data for that area has been suppressed. This is in line with the announcement that school level data would not be published using either summer 2020 or summer 2021 exam grades awarded. Data has not being supressed at local authority or national level from 2022 onwards.",,,,,,,,,,,,,,,,,,,
+"(6) In 2017, new reformed GCSEs (which use the 9-1 grade scale) were introduced into secondary school performance tables in a phased approach. Unreformed subjects continued to be graded using the A* to G system. From 2020 onwards all GCSEs are now reformed and use the 9-1 grading scale.",,,,,,,,,,,,,,,,,,,
+Link:,https://explore-education-statistics.service.gov.uk/data-tables/permalink/18bc8f66-65db-4b44-9418-08dd5a671191,,,,,,,,,,,,,,,,,,
