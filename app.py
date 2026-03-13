@@ -1,3 +1,5 @@
+import logging
+import os
 import re
 from pathlib import Path
 
@@ -17,7 +19,14 @@ from scr.data_processing import (
 )
 
 
-DATA_DIR = Path(__file__).parent / "data"
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(asctime)s - %(levelname)s - %(message)s",
+)
+logger = logging.getLogger(__name__)
+
+_DATA_DIR_OVERRIDE = os.environ.get("DATA_DIR")
+DATA_DIR = Path(_DATA_DIR_OVERRIDE) if _DATA_DIR_OVERRIDE else Path(__file__).parent / "data"
 
 
 def _year_from_name(path: Path) -> str:
@@ -34,23 +43,26 @@ _year_to_path = {
 }
 
 
-@st.cache_data
+@st.cache_data(ttl=3600)
 def _load_gender(year: str) -> pd.DataFrame:
     file_path = _year_to_path["gender"][year]
+    logger.info("Loading gender borough data for year %s from %s", year, file_path)
     df = load_gender_borough(str(file_path))
     return compute_gender_metrics(df)
 
 
-@st.cache_data
+@st.cache_data(ttl=3600)
 def _load_sen(year: str) -> pd.DataFrame:
     file_path = _year_to_path["sen"][year]
+    logger.info("Loading SEN borough data for year %s from %s", year, file_path)
     df = load_sen_borough(str(file_path))
     return compute_sen_metrics(df)
 
 
-@st.cache_data
+@st.cache_data(ttl=3600)
 def _load_th(year: str) -> pd.DataFrame:
     file_path = _year_to_path["th"][year]
+    logger.info("Loading Tower Hamlets schools data for year %s from %s", year, file_path)
     df = load_th_schools(str(file_path))
     return compute_school_metrics(df)
 
@@ -59,6 +71,10 @@ st.set_page_config(
     page_title="Tower Hamlets GCSE Attainment Gaps",
     layout="wide",
 )
+
+if not DATA_DIR.exists():
+    st.error(f"Data directory not found: {DATA_DIR}. Set DATA_DIR environment variable or ensure the data folder exists.")
+    st.stop()
 
 st.title("Tower Hamlets GCSE Attainment Gaps")
 st.caption("Explore gender and SEN attainment gaps across London and within Tower Hamlets.")
@@ -72,18 +88,27 @@ if view == "Borough level":
         st.error("No borough-level datasets found in the data folder.")
         st.stop()
 
-    year = st.selectbox("Year", years, index=len(years) - 1)
+    year = years[-1]  # Use most recent
 
-    if analysis_type == "Gender":
-        df = _load_gender(year)
-        gap_col = "gender_gap"
-        z_col = "gender_gap_zscore_london"
-        gap_label = "Gender gap (girls - boys)"
-    else:
-        df = _load_sen(year)
-        gap_col = "sen_gap"
-        z_col = "sen_gap_zscore_london"
-        gap_label = "SEN gap (non-SEN - SEN)"
+    try:
+        if analysis_type == "Gender":
+            df = _load_gender(year)
+            gap_col = "gender_gap"
+            z_col = "gender_gap_zscore_london"
+            gap_label = "Gender gap (girls - boys)"
+        else:
+            df = _load_sen(year)
+            gap_col = "sen_gap"
+            z_col = "sen_gap_zscore_london"
+            gap_label = "SEN gap (non-SEN - SEN)"
+    except (FileNotFoundError, KeyError, pd.errors.ParserError, ValueError) as e:
+        logger.exception("Failed to load borough data")
+        st.error(f"Failed to load data. Please check that data files exist and are valid CSV format. Error: {e}")
+        st.stop()
+
+    if df.empty:
+        st.error("No borough data available after processing.")
+        st.stop()
 
     boroughs = sorted(df["region_name"].dropna().unique())
     selected_borough = st.selectbox("Borough", boroughs, index=boroughs.index("Tower Hamlets") if "Tower Hamlets" in boroughs else 0)
@@ -120,9 +145,18 @@ else:
     if not years:
         st.error("No Tower Hamlets school datasets found in the data folder.")
         st.stop()
-    year = st.selectbox("Year", years, index=len(years) - 1)
+    year = years[-1]  # Use most recent
 
-    df_schools = _load_th(year)
+    try:
+        df_schools = _load_th(year)
+    except (FileNotFoundError, KeyError, pd.errors.ParserError, ValueError) as e:
+        logger.exception("Failed to load Tower Hamlets schools data")
+        st.error(f"Failed to load school data. Please check that data files exist and are valid CSV format. Error: {e}")
+        st.stop()
+
+    if df_schools.empty:
+        st.error("No school data available for Tower Hamlets.")
+        st.stop()
 
     left, right = st.columns(2)
     with left:
