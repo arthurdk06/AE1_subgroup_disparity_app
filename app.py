@@ -122,43 +122,25 @@ if view == "Borough level":
     selected_borough = st.selectbox("Borough", boroughs, index=boroughs.index("Tower Hamlets") if "Tower Hamlets" in boroughs else 0)
 
     if analysis_type == "Gender":
-        # Split into two side-by-side charts: girls and boys attainment by borough
-        df_plot = df.copy()
-        df_plot_sorted = df_plot.sort_values("girls_attainment_8_score")
+        # Single bar chart of gender gap (girls - boys), with correct sort order and colors
+        df_plot = df.copy().sort_values(gap_col)
         col_selected = COLOR_GENDER_SELECTED
         col_other = COLOR_GENDER_OTHER
+        colors = [col_selected if r == selected_borough else col_other for r in df_plot["region_name"]]
+        fig = px.bar(
+            df_plot,
+            x="region_name",
+            y=gap_col,
+            labels={"region_name": "Borough", gap_col: gap_label},
+        )
+        fig.update_traces(marker_color=colors)
+        fig.update_layout(showlegend=False, xaxis_tickangle=-45, height=500)
+        st.plotly_chart(fig, use_container_width=True)
+        st.caption("Gender gap = girls' − boys' average Attainment 8 by borough. Z-score measures deviation from London mean.")
 
-        col_left, col_right = st.columns(2)
-        with col_left:
-            colors_girls = [col_selected if r == selected_borough else col_other for r in df_plot_sorted["region_name"]]
-            fig_girls = px.bar(
-                df_plot_sorted,
-                x="region_name",
-                y="girls_attainment_8_score",
-                labels={"region_name": "Borough", "girls_attainment_8_score": "Girls Attainment 8"},
-            )
-            fig_girls.update_traces(marker_color=colors_girls)
-            fig_girls.update_layout(showlegend=False, xaxis_tickangle=-45, height=500)
-            st.plotly_chart(fig_girls, use_container_width=True)
-            st.caption("Girls' average Attainment 8 score by borough. Z-score measures how far from the London mean.")
-        with col_right:
-            df_plot_sorted_boys = df_plot.sort_values("boys_attainment_8_score")
-            colors_boys = [col_selected if r == selected_borough else col_other for r in df_plot_sorted_boys["region_name"]]
-            fig_boys = px.bar(
-                df_plot_sorted_boys,
-                x="region_name",
-                y="boys_attainment_8_score",
-                labels={"region_name": "Borough", "boys_attainment_8_score": "Boys Attainment 8"},
-            )
-            fig_boys.update_traces(marker_color=colors_boys)
-            fig_boys.update_layout(showlegend=False, xaxis_tickangle=-45, height=500)
-            st.plotly_chart(fig_boys, use_container_width=True)
-            st.caption("Boys' average Attainment 8 score by borough. Compare side-by-side with girls for gap context.")
-
-        gap_col = "gender_gap"
         selected_row = df_plot[df_plot["region_name"] == selected_borough].iloc[0]
-        gap_value = selected_row["gender_gap"]
-        z_value = selected_row["gender_gap_zscore_london"]
+        gap_value = selected_row[gap_col]
+        z_value = selected_row[z_col]
     else:
         # SEN: single bar chart of gap, with correct sort order and colors
         df_plot = df.copy().sort_values(gap_col)
@@ -233,6 +215,17 @@ else:
         fig_boys_dist.update_traces(marker_color=COLOR_BOYS)
         st.plotly_chart(fig_boys_dist, use_container_width=True)
         st.caption("Distribution of boys' Attainment 8 scores. Compare with girls for gap context.")
+
+    fig_gap = px.histogram(
+        df_schools.dropna(subset=["gender_gap"]),
+        x="gender_gap",
+        nbins=20,
+        labels={"gender_gap": "Gender gap (girls - boys)"},
+        title="Distribution of Gender Gaps (Tower Hamlets)",
+    )
+    fig_gap.update_traces(marker_color=COLOR_GIRLS)
+    st.plotly_chart(fig_gap, use_container_width=True)
+    st.caption("Gender gap = girls' − boys' Attainment 8 per school. Positive values mean girls score higher.")
 
     fig_att8 = px.histogram(
         df_schools,
